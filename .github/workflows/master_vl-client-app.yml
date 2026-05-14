@@ -52,16 +52,17 @@ jobs:
         with:
           name: client-artifact
 
-      - name: Login to Azure
-        uses: azure/login@v2
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-      - name: 'Deploy to Azure Web App'
+      # If you prefer not to create an Azure service principal secret,
+      # use the App Service publish profile instead:
+      # 1) Portal -> App Services -> vl-client-app -> Get publish profile
+      # 2) GitHub -> repo -> Settings -> Secrets and variables -> Actions -> New repository secret
+      #    Name: AZURE_WEBAPP_PUBLISH_PROFILE
+      #    Value: (paste contents of the downloaded publish profile XML)
+      - name: 'Deploy to Azure Web App (publish profile)'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'vl-client-app'
-          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: .
           
