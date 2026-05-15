@@ -23,7 +23,7 @@ body {
 }
 
 .card {
-  width: min(100%, 420px);
+  width: min(100%, 560px);
   background: #ffffff;
   border-radius: 16px;
   padding: 1.5rem;
@@ -72,6 +72,93 @@ button {
   color: #fff;
   font-weight: 600;
   cursor: pointer;
+}
+
+.secondary-button {
+  background: #334155;
+}
+
+.danger-button {
+  background: #b91c1c;
+  margin-top: 0;
+  padding: 0.45rem 0.75rem;
+}
+
+.link-button {
+  border: none;
+  background: none;
+  color: #1d4ed8;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.hint {
+  margin-top: 0.9rem;
+  color: #475569;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.task-create-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.task-create-row input {
+  flex: 1;
+}
+
+.task-create-row button {
+  margin-top: 0;
+  white-space: nowrap;
+}
+
+.task-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.task-item {
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.6rem 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.task-check-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.task-check-row input {
+  width: auto;
+  margin: 0;
+}
+
+.task-title {
+  font-weight: 600;
+}
+
+.task-title.done {
+  text-decoration: line-through;
+  color: #64748b;
 }
 
 button:disabled {
